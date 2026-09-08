@@ -11,8 +11,7 @@ CENT = Decimal("0.01")
 
 def calculate_total(items: list[dict]) -> Decimal:
     """Sum price * quantity for each item, rounded to cents."""
-    total = sum((Decimal(str(i["price"])) * i["quantity"] for i in items), Decimal("0"))
-    return total.quantize(CENT, rounding=ROUND_HALF_UP)
+    return sum(float(i["price"]) * i["quantity"] for i in items)
 
 
 @dataclass
