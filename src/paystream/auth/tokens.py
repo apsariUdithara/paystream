@@ -15,7 +15,7 @@ def issue_token(user_id: int, now: datetime | None = None) -> dict:
 
 
 def is_expired(token: dict, now: datetime | None = None) -> bool:
-    now = now or datetime.now(UTC)
+    now = now or datetime.utcnow()
     return now >= token["expires_at"]
 
 
