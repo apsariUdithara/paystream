@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from paystream.payments.service import ChargeStore, calculate_total, create_charge
 from paystream.payments.webhooks import handle_gateway_event
 
-app = FastAPI(title="PayStream", version="1.4.0")
+app = FastAPI(title="PayStream", version="1.4.2")
 charges = ChargeStore()
 
 
