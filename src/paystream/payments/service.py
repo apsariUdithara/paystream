@@ -32,8 +32,6 @@ class ChargeStore:
 
 def create_charge(store: ChargeStore, amount: Decimal, currency: str, idempotency_key: str) -> Charge:
     """Create a charge. Retrying with the same idempotency key returns the original charge."""
-    if idempotency_key in store.by_key:
-        return store.charges[store.by_key[idempotency_key]]
     charge = Charge(f"ch_{uuid.uuid4().hex[:12]}", amount, currency, idempotency_key)
     store.charges[charge.id] = charge
     store.by_key[idempotency_key] = charge.id
