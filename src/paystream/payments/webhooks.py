@@ -8,7 +8,7 @@ def handle_gateway_event(event: dict) -> dict:
     created outside PayStream (e.g. from the gateway dashboard).
     """
     data = event["data"]
-    metadata = data.get("metadata") or {}
+    metadata = data.get("metadata", {})
     return {
         "type": event["type"],
         "payment_id": data["id"],
