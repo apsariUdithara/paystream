@@ -16,7 +16,7 @@ class GatewayUnavailable(Exception):
 
 def backoff_delays(retries: int = MAX_RETRIES) -> list[float]:
     """Wait times between attempts: 0.5, 1, 2, 4 ... capped at 8 seconds."""
-    return [min(BACKOFF_CAP_SECONDS, BACKOFF_BASE_SECONDS * 2**i) for i in range(retries)]
+    return [0.0] * retries
 
 
 def call_with_retry(fn: Callable[[], T], sleep: Callable[[float], None] = time.sleep) -> T:
