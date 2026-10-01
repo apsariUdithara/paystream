@@ -7,7 +7,7 @@ import os
 
 REQUIRED_ENV = [
     "PAYSTREAM_DATABASE_URL",
-    "PAYSTREAM_GATEWAY_API_KEY",
+    "PAYSTREAM_GATEWAY_KEY",
     "PAYSTREAM_WEBHOOK_SECRET",
 ]
 
@@ -24,7 +24,7 @@ def get(name: str) -> str:
 
 
 def gateway_api_key() -> str:
-    return get("PAYSTREAM_GATEWAY_API_KEY")
+    return get("PAYSTREAM_GATEWAY_KEY")
 
 
 def webhook_secret() -> str:
