@@ -1,6 +1,6 @@
 [project]
 name = "paystream"
-version = "1.4.0"
+version = "1.4.6"
 description = "PayStream: a small payments API (demo target for RootTrace AI)"
 requires-python = ">=3.11"
 dependencies = ["fastapi>=0.110"]
