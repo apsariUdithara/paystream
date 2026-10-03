@@ -24,6 +24,7 @@ MIGRATIONS: list[tuple[str, str]] = [
         )"""),
     ("0003_index_users_name", "CREATE INDEX ix_users_name ON users (name)"),
     ("0004_index_payments_user", "CREATE INDEX ix_payments_user_id ON payments (user_id)"),
+    ("0005_drop_duplicate_indexes", "DROP INDEX ix_users_name"),
 ]
 
 
